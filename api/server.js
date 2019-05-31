@@ -18,5 +18,10 @@ server.use(cors());
 server.use('/api/actions', actionRoutes);
 server.use('/api/projects', projectRoutes);
 
+// create fallback
+server.use('/', (req, res) => {
+    res.status(200).send('<h1>Web API Challenge</h1>');
+});
+
 module.exports = server;
 
